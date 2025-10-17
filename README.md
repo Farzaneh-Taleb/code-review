@@ -46,3 +46,16 @@ interface FormattedUser {
 ```
 #### 2. Date Formatting
 The date slicing logic u.signupDate.split("T")[0] works, but it assumes a specific ISO format. It would be safer and more explicit to use date library functions or ensure consistent date parts retrieval.
+
+
+#### 3.Functional Programming Style
+The current for loop is imperative. Using the Array.prototype.map() method is the a better way to transform every item in an array in modern JavaScript/TypeScript, making the code more declarative and concise.
+
+```typescript
+
+// Refactor: Replace the 'for' loop and 'push' with 'map'
+return users.map((u) => {
+  // ... logic
+  return { /* ... formatted object */ };
+});
+```
