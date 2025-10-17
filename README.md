@@ -59,3 +59,18 @@ return users.map((u) => {
   return { /* ... formatted object */ };
 });
 ```
+
+#### 3. Constants and Readability
+Extract the "milliseconds in a day" and the "30-day" limit into named constants.
+
+```typescript
+
+// Suggestion: Add constant definition
+const MS_PER_DAY = 86400000;
+const ACTIVE_LOGIN_DAYS = 30;
+const ACTIVE_THRESHOLD = Date.now() - ACTIVE_LOGIN_DAYS * MS_PER_DAY;
+
+// ... inside map or loop:
+// new Date(u.lastLogin) > new Date(ACTIVE_THRESHOLD)
+```
+
